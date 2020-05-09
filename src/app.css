@@ -1,0 +1,11 @@
+img {
+	display: block;
+	margin-left: 300px;
+	margin-right: auto;
+	margin-top: 30px;
+	width: 26%;
+}
+
+.out-div {
+	margin: 30px;
+}
