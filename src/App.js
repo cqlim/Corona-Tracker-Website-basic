@@ -40,7 +40,7 @@ const App = () => {
 	return (
 		<div className="out-div">
 			<Container>
-				<h2>Status of Oregon</h2>>
+				<h2>Covid-19: Status of Oregon</h2>>
 				<Row>
 					<Col>
 						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/2000px-Flag_of_Oregon.svg.png" />
@@ -127,7 +127,7 @@ const App = () => {
 				</Row>
 			</Container>
 			<Container>
-				<h2>Status of United State</h2>>
+				<h2>Covid-19: Status of United State</h2>>
 				<Row>
 					<Col>
 						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" />
