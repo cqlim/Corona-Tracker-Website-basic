@@ -9,19 +9,15 @@ import axios from "axios";
 import "./app.css";
 import NumberFormat from "react-number-format";
 
-function numberWithCommas(x) {
-	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 const App = () => {
-	const [latest, setLatest] = useState("");
-	const [federalLatest, federalsetLatest] = useState("");
+	const [latest, setLatest] = useState([]);
+	const [federalLatest, federalsetLatest] = useState([]);
 
 	useEffect(() => {
 		axios
 			.all([
 				axios.get("https://covidtracking.com/api/states/"),
-				axios.get("http://covidtracking.com/api/us"),
+				axios.get("https://covidtracking.com/api/us"),
 			])
 			.then((responseArr) => {
 				console.log(responseArr);
@@ -39,7 +35,10 @@ const App = () => {
 				<h2>Covid-19: Status of Oregon</h2>>
 				<Row>
 					<Col>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/2000px-Flag_of_Oregon.svg.png" />
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/2000px-Flag_of_Oregon.svg.png"
+							alt="description of image"
+						/>
 					</Col>
 				</Row>
 				<Row>
@@ -126,7 +125,10 @@ const App = () => {
 				<h2>Covid-19: Status of United State</h2>>
 				<Row>
 					<Col>
-						<img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" />
+						<img
+							src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png"
+							alt="description of image"
+						/>
 					</Col>
 				</Row>
 				<Row>
