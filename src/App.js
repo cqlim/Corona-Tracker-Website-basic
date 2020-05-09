@@ -22,15 +22,15 @@ const App = () => {
 			.get("https://covidtracking.com/api/states/")
 			.then((res) => {
 				setLatest(res.data[37]);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
 
-		axios
-			.get("http://covidtracking.com/api/us")
-			.then((res) => {
-				federalsetLatest(res.data[0]);
+				axios
+					.get("http://covidtracking.com/api/us")
+					.then((res) => {
+						federalsetLatest(res.data[0]);
+					})
+					.catch((err) => {
+						console.log(err);
+					});
 			})
 			.catch((err) => {
 				console.log(err);
