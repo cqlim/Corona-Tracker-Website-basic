@@ -19,18 +19,14 @@ const App = () => {
 
 	useEffect(() => {
 		axios
-			.get("https://covidtracking.com/api/states/")
-			.then((res) => {
-				setLatest(res.data[37]);
-
-				axios
-					.get("http://covidtracking.com/api/us")
-					.then((res) => {
-						federalsetLatest(res.data[0]);
-					})
-					.catch((err) => {
-						console.log(err);
-					});
+			.all([
+				axios.get("https://covidtracking.com/api/states/"),
+				axios.get("http://covidtracking.com/api/us"),
+			])
+			.then((responseArr) => {
+				console.log(responseArr);
+				setLatest(responseArr[0].data[37]);
+				federalsetLatest(responseArr[1].data[0]);
 			})
 			.catch((err) => {
 				console.log(err);
